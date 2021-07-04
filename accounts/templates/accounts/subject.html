@@ -10,10 +10,11 @@
 
 <body>
     <div>
-        <p>Classes</p>
-        {% for class in classes %}
+        <p>Subject</p>
+        {% for subject in subjects %}
+        {% comment %} <p>{{subject.name}}</p> {% endcomment %}
+        <a href='{% url 'student' id=subject.id %}'>{{subject.name}}</a>
         
-        <a href='{% url 'subject' id=class.id %}'>{{class.name}}</a>
 
         {% endfor %}
     </div>

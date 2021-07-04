@@ -2,9 +2,15 @@ from django.db import models
 from django.db.models.fields.related import ForeignKey
 
 # Create your models here.
+class Grade(models.Model):
+    name=models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+    
 class Student(models.Model):
     name=models.CharField(max_length=200)
-    grade=models.IntegerField()
+    grade=models.ForeignKey(Grade,on_delete=models.CASCADE)
     roll=models.IntegerField()
     symbolNo=models.CharField(max_length=10)
 
@@ -38,8 +44,6 @@ class Mark(models.Model):
     student=models.ForeignKey(Student,on_delete=models.CASCADE)
 
 
-    def __str__(self):
-        return self.name
     
 
     

@@ -7,5 +7,7 @@ admin.site.register(Student)
 admin.site.register(Exam)
 admin.site.register(Subject)
 admin.site.register(Mark)
+admin.site.register(Grade)
+
 
 
